@@ -29,7 +29,7 @@ private:
 	std::vector<Texture> _textures;
 
 public:
-	sf::Texture& operator[](int index)
+	sf::Texture &operator[](int index)
 	{
 		return _textures[index]._texture;
 	}
@@ -40,5 +40,5 @@ public:
 	}
 	std::unordered_set<int> getConnections(int, Directions) const;
 
-	int load(std::string, std::string, std::string);
+	int load(std::string, unsigned int &);
 };

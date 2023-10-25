@@ -40,10 +40,9 @@ public:
 		return _possibleTiles.size();
 	}
 
-	void setPosition(int x, int y, unsigned int textureSize, float scale)
+	void setPosition(int x, int y, unsigned int textureSize)
 	{
-		_sprite.setPosition(scale * textureSize * x, scale * textureSize * y);
-		_sprite.setScale(scale, scale);
+		_sprite.setPosition( textureSize * x, textureSize * y);
 		_position = sf::Vector2i(x, y);
 	}
 

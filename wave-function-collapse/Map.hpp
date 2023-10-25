@@ -21,8 +21,7 @@ private:
 	float _scale{1};
 
 public:
-	Map(unsigned int, unsigned int, unsigned int, float);
-	void loadTextures(std::string, std::string, std::string);
+	Map(unsigned int, unsigned int, std::string);
 	void drawOn(sf::RenderWindow &);
 	void updatePossibilities(int, int);
 	Tile &getTileWithLowestEntropy();

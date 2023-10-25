@@ -1,33 +1,21 @@
 #include "./Map.hpp"
 #include <iostream>
 
-Map::Map(unsigned int width, unsigned int height, unsigned int textureSize, float scale)
+Map::Map(unsigned int resX, unsigned int resY, std::string tileConnectionsFileName)
 {
-	_textureSize = textureSize;
-	_scale = scale;
-	for (int i = 0; i < width / scale; ++i)
+	int textureCount = _textures.load(tileConnectionsFileName, _textureSize);
+	for (int i = 0; i < resX / _textureSize; ++i)
 	{
 		std::vector<Tile> temp_;
-		for (int j = 0; j < height / scale; ++j)
+		for (int j = 0; j < resY / _textureSize; ++j)
 		{
 			Tile tile;
-			tile.setPosition(i, j, textureSize, scale);
+			tile.setPosition(i, j, _textureSize);
+			tile.setPossibleTiles(textureCount);
+			_entropies.push_back(Entr{textureCount, sf::Vector2i{i, j}});
 			temp_.push_back(tile);
 		}
 		_tiles.push_back(temp_);
-	}
-}
-
-void Map::loadTextures(std::string tileConnectionsFileName, std::string texturesPath, std::string texturesExtension = "png")
-{
-	int textureCount = _textures.load(tileConnectionsFileName, texturesPath, texturesExtension);
-	for (int i = 0; i < _tiles.size(); ++i)
-	{
-		for (int j = 0; j < _tiles[0].size(); ++j)
-		{
-			_tiles[i][j].setPossibleTiles(textureCount);
-			_entropies.push_back(Entr{textureCount, sf::Vector2i{i, j}});
-		}
 	}
 }
 
@@ -46,7 +34,6 @@ void Map::updatePossibilities(int x, int y)
 		bU = _tiles[x][y - 1].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::north, _textures));
 		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
 													 { return (a._pos.x == x) && (a._pos.y == (y - 1)); });
-		std::cout << 49 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
 		if (it != _entropies.end())
 			it->_entropy = _tiles[x][y - 1].getEntropy();
 	}
@@ -55,7 +42,6 @@ void Map::updatePossibilities(int x, int y)
 		bD = _tiles[x][y + 1].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::south, _textures));
 		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
 													 { return (a._pos.x == x) && (a._pos.y == (y + 1)); });
-		std::cout << 58 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
 		if (it != _entropies.end())
 			it->_entropy = _tiles[x][y + 1].getEntropy();
 	}
@@ -64,7 +50,6 @@ void Map::updatePossibilities(int x, int y)
 		bL = _tiles[x - 1][y].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::east, _textures));
 		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
 													 { return (a._pos.x == (x - 1)) && (a._pos.y == y); });
-		std::cout << 67 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
 		if (it != _entropies.end())
 			it->_entropy = _tiles[x - 1][y].getEntropy();
 	}
@@ -73,7 +58,6 @@ void Map::updatePossibilities(int x, int y)
 		bR = _tiles[x + 1][y].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::west, _textures));
 		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
 													 { return (a._pos.x == (x + 1)) && (a._pos.y == y); });
-		std::cout << 76 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
 		if (it != _entropies.end())
 			it->_entropy = _tiles[x + 1][y].getEntropy();
 	}
@@ -122,16 +106,16 @@ void Map::updateMap()
 
 void Map::reset()
 {
-	unsigned int width = _tiles.size(), height = _tiles[0].size();
+	unsigned int resX = _tiles.size(), resY = _tiles[0].size();
 	_tiles.clear();
 	_entropies.clear();
-	for (int i = 0; i < width / _scale; ++i)
+	for (int i = 0; i < resX / _scale; ++i)
 	{
 		std::vector<Tile> temp_;
-		for (int j = 0; j < height / _scale; ++j)
+		for (int j = 0; j < resY / _scale; ++j)
 		{
 			Tile tile;
-			tile.setPosition(i, j, _textureSize, _scale);
+			tile.setPosition(i, j, _textureSize);
 			temp_.push_back(tile);
 		}
 		_tiles.push_back(temp_);

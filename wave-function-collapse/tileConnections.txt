@@ -1,3 +1,6 @@
+50
+./images/
+png
 uldr u d l r ud lr udl udr ulr dlr ul ur dl dr
 # uldr
 uldr d ud dl dr dlr udl udr

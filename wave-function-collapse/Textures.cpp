@@ -22,13 +22,14 @@ std::unordered_set<int> Textures::getConnections(int textureIndex, Directions di
 	}
 }
 
-int Textures::load(std::string tileConnectionsFileName, std::string texturesPath, std::string texturesExtension)
+int Textures::load(std::string tileConnectionsFileName, unsigned int &textureSize)
 {
 	std::ifstream ifs;
 	// no idea what to do if filename is wrong or file doesn't exist
 	ifs.open(tileConnectionsFileName, std::ifstream::in);
 
-	std::string word;
+	std::string word, texturesPath, texturesExtension;
+	ifs >> textureSize >> texturesPath >> texturesExtension;
 	int tileIndex = -1;
 	bool hashFlag = false;
 	Directions direction = north;
