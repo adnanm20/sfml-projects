@@ -17,7 +17,7 @@ r l lr ur ul ulr
 # l
 u l r lr ul ur ulr
 / d l r lr dl dr dlr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / u d r ud ur dr udr
 # r
 u l r lr ul ur ulr
@@ -32,12 +32,12 @@ uldr d ud dr dl udl udr dlr
 # lr
 u l r lr ul ur ulr
 / d l r lr dl dr dlr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / uldr l lr ul dl udl ulr dlr
 # udl
 uldr d ud dr dl udl udr dlr
 / uldr u ud ur ul udl udr ulr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / u d ud r ur dr udr
 # udr
 uldr d ud dr dl udl udr dlr
@@ -47,17 +47,17 @@ uldr d ud dr dl udl udr dlr
 # ulr
 uldr d ud dr dl udl udr dlr
 / d l r lr dl dr dlr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / uldr l lr ul dl udl ulr dlr
 # dlr
 u l r lr ul ur ulr
 / uldr u ud ur ul udl udr ulr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / uldr l lr ul dl udl ulr dlr
 # ul
 uldr d ud dr dl udl udr dlr
 / r l lr dr dl dlr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / u d ud r ur dr udr
 # ur
 uldr d ud dr dl udl udr dlr
@@ -67,7 +67,7 @@ uldr d ud dr dl udl udr dlr
 # dl
 r l lr ur ul ulr
 / uldr u ud ul ur udl udr ulr
-/ uldr r lr ur dr ulr dlr udl
+/ uldr r lr ur dr ulr dlr
 / u d ud r ur dr udr
 # dr
 r l lr ur ul ulr
