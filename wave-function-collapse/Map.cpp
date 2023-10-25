@@ -3,10 +3,12 @@
 
 Map::Map(unsigned int width, unsigned int height, unsigned int textureSize, float scale)
 {
-	for (int i = 0; i < width/scale; ++i)
+	_textureSize = textureSize;
+	_scale = scale;
+	for (int i = 0; i < width / scale; ++i)
 	{
 		std::vector<Tile> temp_;
-		for (int j = 0; j < height/scale; ++j)
+		for (int j = 0; j < height / scale; ++j)
 		{
 			Tile tile;
 			tile.setPosition(i, j, textureSize, scale);
@@ -20,8 +22,13 @@ void Map::loadTextures(std::string tileConnectionsFileName, std::string textures
 {
 	int textureCount = _textures.load(tileConnectionsFileName, texturesPath, texturesExtension);
 	for (int i = 0; i < _tiles.size(); ++i)
+	{
 		for (int j = 0; j < _tiles[0].size(); ++j)
+		{
 			_tiles[i][j].setPossibleTiles(textureCount);
+			_entropies.push_back(Entr{textureCount, sf::Vector2i{i, j}});
+		}
+	}
 }
 
 void Map::drawOn(sf::RenderWindow &window)
@@ -37,18 +44,38 @@ void Map::updatePossibilities(int x, int y)
 	if (y - 1 > -1)
 	{
 		bU = _tiles[x][y - 1].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::north, _textures));
+		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
+													 { return (a._pos.x == x) && (a._pos.y == (y - 1)); });
+		std::cout << 49 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
+		if (it != _entropies.end())
+			it->_entropy = _tiles[x][y - 1].getEntropy();
 	}
 	if (y + 1 < _tiles[0].size())
 	{
 		bD = _tiles[x][y + 1].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::south, _textures));
+		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
+													 { return (a._pos.x == x) && (a._pos.y == (y + 1)); });
+		std::cout << 58 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
+		if (it != _entropies.end())
+			it->_entropy = _tiles[x][y + 1].getEntropy();
 	}
 	if (x - 1 > -1)
 	{
 		bL = _tiles[x - 1][y].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::east, _textures));
+		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
+													 { return (a._pos.x == (x - 1)) && (a._pos.y == y); });
+		std::cout << 67 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
+		if (it != _entropies.end())
+			it->_entropy = _tiles[x - 1][y].getEntropy();
 	}
 	if (x + 1 < _tiles.size())
 	{
 		bR = _tiles[x + 1][y].filterPossibleTiles(_tiles[x][y].possibleTiles(Directions::west, _textures));
+		auto it = std::find_if(_entropies.begin(), _entropies.end(), [x, y](Entr a)
+													 { return (a._pos.x == (x + 1)) && (a._pos.y == y); });
+		std::cout << 76 << " " << it->_pos.x << " " << it->_pos.y << std::endl;
+		if (it != _entropies.end())
+			it->_entropy = _tiles[x + 1][y].getEntropy();
 	}
 	if (bU)
 		updatePossibilities(x, y - 1);
@@ -62,24 +89,15 @@ void Map::updatePossibilities(int x, int y)
 
 Tile &Map::getTileWithLowestEntropy()
 {
-	int x = -1, y = -1;
-	int minEntropy = _textures.size();
-	for (int i = 0; i < _tiles.size(); ++i)
+	int x, y, i = 0;
+	do
 	{
-		for (int j = 0; j < _tiles[0].size(); ++j)
-		{
-			if (_tiles[i][j].type() != -1)
-				continue;
-			int t = _tiles[i][j].getEntropy();
-			if (t < minEntropy)
-			{
-				x = i;
-				y = j;
-				minEntropy = t;
-			}
-		}
-	}
-	if (x == -1)
+		x = _entropies[i]._pos.x;
+		y = _entropies[i]._pos.y;
+		++i;
+	} while(_tiles[x][y].type() != -1);
+
+	if (_entropies[0]._entropy == _textures.size())
 	{
 		x = rand() % _tiles.size();
 		y = rand() % _tiles[0].size();
@@ -98,4 +116,34 @@ void Map::updateMap()
 	tileWithLowestEntropy.setRandomTileType(_textures);
 	updatePossibilities(pos.x, pos.y);
 	++_tilesFilled;
+	std::sort(_entropies.begin(), _entropies.end(), [](Entr a, Entr b)
+						{ return a._entropy < b._entropy; });
+}
+
+void Map::reset()
+{
+	unsigned int width = _tiles.size(), height = _tiles[0].size();
+	_tiles.clear();
+	_entropies.clear();
+	for (int i = 0; i < width / _scale; ++i)
+	{
+		std::vector<Tile> temp_;
+		for (int j = 0; j < height / _scale; ++j)
+		{
+			Tile tile;
+			tile.setPosition(i, j, _textureSize, _scale);
+			temp_.push_back(tile);
+		}
+		_tiles.push_back(temp_);
+	}
+	_tilesFilled = 0;
+	int textureCount = _textures.size();
+	for (int i = 0; i < _tiles.size(); ++i)
+	{
+		for (int j = 0; j < _tiles[0].size(); ++j)
+		{
+			_tiles[i][j].setPossibleTiles(textureCount);
+			_entropies.push_back(Entr{textureCount, sf::Vector2i{i, j}});
+		}
+	}
 }
