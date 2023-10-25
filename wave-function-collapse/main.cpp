@@ -16,7 +16,7 @@ int main(int argc, char const *argv[])
 	int resX = 1920, resY = 1080;
 	unsigned int textureSize = 50;
 	float scale = 1;
-	Map map(resX / textureSize, resY / textureSize, textureSize, scale);
+	Map map(resX / textureSize + 1, resY / textureSize + 1, textureSize, scale);
 	map.loadTextures("tileConnections.txt", "./images/", "png");
 
 	srand(time(NULL));
@@ -46,6 +46,15 @@ int main(int argc, char const *argv[])
 				if (event.key.code == sf::Keyboard::Space)
 				{
 					startMapCreation = true;
+				}
+				else if (event.key.code == sf::Keyboard::R)
+				{
+					map.reset();
+					startMapCreation = false;
+				}
+				else if (event.key.code == sf::Keyboard::N)
+				{
+					map.updateMap();
 				}
 			}
 		}
