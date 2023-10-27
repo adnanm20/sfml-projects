@@ -13,5 +13,11 @@ Textures.o: Textures.cpp Textures.hpp
 Tile.o: Tile.cpp Tile.hpp
 	g++ -c Tile.cpp
 
+configConnections: connectionMaker.o 
+	g++ connectionMaker.o -o connectionMaker.out -lsfml-graphics -lsfml-system
+
+connectionMaker.o: connectionMaker.cpp
+	g++ -c connectionMaker.cpp
+
 clean:
-	rm main.o Map.o Textures.o Tile.o
+	rm *.o

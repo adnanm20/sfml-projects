@@ -1,0 +1,79 @@
+25
+./tiles/
+png
+uldr25 u25 d25 l25 r25 ud25 lr25 udl25 udr25 ulr25 dlr25 ul25 ur25 dl25 dr25 
+# uldr25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# u25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# d25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# l25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# r25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# ud25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# lr25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# udl25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# udr25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# ulr25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# dlr25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# ul25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# ur25
+dr25 dlr25 udr25 udl25 ud25 d25 dl25 uldr25 
+/ dr25 dl25 dlr25 lr25 r25 l25 d25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 
+# dl25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dr25 ur25 dlr25 ulr25 udr25 lr25 r25 uldr25 
+/ ur25 udr25 ud25 r25 d25 dr25 u25 
+# dr25
+ur25 ul25 ulr25 lr25 r25 l25 u25 
+/ ur25 ul25 ulr25 udr25 udl25 ud25 u25 uldr25 
+/ dl25 ul25 udl25 ud25 l25 d25 u25 
+/ ul25 dlr25 ulr25 udl25 lr25 l25 dl25 uldr25 

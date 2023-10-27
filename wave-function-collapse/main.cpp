@@ -14,8 +14,7 @@
 int main(int argc, char const *argv[])
 {
 	int resX = 1920, resY = 1080;
-	unsigned int textureSize = 50;
-	Map map(resX, resY, "tileConnections.txt");
+	Map map(resX, resY, "circuit.txt");
 
 	srand(time(NULL));
 

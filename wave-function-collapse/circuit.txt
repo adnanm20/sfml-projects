@@ -1,0 +1,124 @@
+30
+./circuit/
+png
+chip_center chip_conn_d chip_conn_l chip_conn_r chip_conn_u chip_corner_dl chip_corner_dr chip_corner_ul chip_corner_ur wire_dl wire_dlr wire_dr wire_end_d wire_end_l wire_end_r wire_end_u wire_lr wire_udl wire_udlr wire_ud wire_udr wire_ul wire_ulr wire_ur 
+# chip_center
+chip_conn_u chip_center 
+/ chip_conn_d chip_center 
+/ chip_conn_l chip_center 
+/ chip_conn_r chip_center 
+# chip_conn_d
+chip_conn_u chip_center 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ chip_corner_dl chip_conn_d 
+/ chip_corner_dr chip_conn_d 
+# chip_conn_l
+chip_corner_ul chip_conn_l 
+/ chip_corner_dl chip_conn_l 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ chip_conn_r chip_center 
+# chip_conn_r
+chip_corner_ur chip_conn_r 
+/ chip_corner_dr chip_conn_r 
+/ chip_conn_l chip_center 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# chip_conn_u
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ chip_conn_d chip_center 
+/ chip_corner_ul chip_conn_u 
+/ chip_corner_ur chip_conn_u 
+# chip_corner_dl
+chip_corner_ul chip_conn_l 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ chip_corner_dr chip_conn_d 
+# chip_corner_dr
+chip_corner_ur chip_conn_r 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ chip_corner_dl chip_conn_d 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# chip_corner_ul
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ chip_corner_dl chip_conn_l 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ chip_corner_ur chip_conn_u 
+# chip_corner_ur
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ chip_corner_dr chip_conn_r 
+/ chip_corner_ul chip_conn_u 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_dl
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_dlr
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_dr
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_end_d
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_end_l
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_end_r
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_end_u
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_lr
+wire_ur wire_ulr wire_ul wire_lr wire_end_u wire_end_r wire_end_l chip_corner_dr chip_corner_dl 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_udl
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_udlr
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_ud
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_udr
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_ur wire_ulr wire_ul wire_udr wire_ud wire_udlr wire_end_u wire_udl chip_conn_u 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_ul
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ur wire_ud wire_end_u wire_end_r wire_end_d wire_dr wire_udr chip_corner_ul chip_corner_dl 
+# wire_ulr
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_ulr wire_udr wire_udlr wire_end_r wire_dr wire_ur wire_dlr wire_lr chip_conn_r 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
+# wire_ur
+wire_udr wire_ud wire_udlr wire_udl wire_end_d wire_dr wire_dlr wire_dl chip_conn_d 
+/ wire_lr wire_end_r wire_end_l wire_end_d wire_dr wire_dlr wire_dl chip_corner_ur chip_corner_ul 
+/ wire_udl wire_end_u wire_end_l wire_end_d wire_dl wire_ul chip_corner_ur wire_ud chip_corner_dr 
+/ wire_ul wire_udlr wire_udl wire_lr wire_end_l wire_dlr wire_ulr wire_dl chip_conn_l 
