@@ -13,8 +13,18 @@
 
 int main(int argc, char const *argv[])
 {
+	std::string inputFile;
+	if(argc != 3) {
+		std::cout << "Please provide an input file for tiles using -i  *inputFile*" << std::endl;
+		return 0;
+	} else {
+		if(std::string{"-i"} == argv[1]) {
+			inputFile = argv[2];
+		}
+	}
+	
 	int resX = 1920, resY = 1080;
-	Map map(resX, resY, "circuit.txt");
+	Map map(resX, resY, inputFile);
 
 	srand(time(NULL));
 

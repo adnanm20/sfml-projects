@@ -17,7 +17,7 @@ public:
 
 std::string texturesPath, texturesExtension;
 
-void loadTiles(std::string filename, std::vector<sf::Image> &images, std::vector<std::string> &names)
+void loadTiles(const std::string& filename, std::vector<sf::Image> &images, std::vector<std::string> &names)
 {
 	std::ifstream ifs;
 	// no idea what to do if filename is wrong or file doesn't exist
@@ -35,11 +35,13 @@ void loadTiles(std::string filename, std::vector<sf::Image> &images, std::vector
 	}
 }
 
-void printConnectionsToFile(std::string filename, int size, std::vector<Tiles> &tiles, std::vector<std::string> &tileNames)
+void printConnectionsToFile(const std::string& filename, int size, std::vector<Tiles> &tiles, std::vector<std::string> &tileNames)
 {
 	std::ofstream ofs;
 	ofs.open(filename, std::ofstream::out);
-	ofs << size << '\n' << texturesPath << '\n' << texturesExtension << '\n';
+	ofs << size << '\n'
+			<< texturesPath << '\n'
+			<< texturesExtension << '\n';
 	for (int i = 0; i < tileNames.size(); ++i)
 	{
 		ofs << tileNames[i] << " ";
@@ -73,9 +75,33 @@ void printConnectionsToFile(std::string filename, int size, std::vector<Tiles> &
 
 int main(int argc, char const *argv[])
 {
+	std::string inputFile, outputFile;
+	if (argc != 5)
+	{
+		std::cout << "please provide input and output file using -i *inputfile* -o *outputfile*" << std::endl;
+		return 0;
+	}
+	else
+	{
+		for (int i = 0; i < argc; ++i)
+		{
+			if (std::string{"-i"} == argv[i] && i + 1 < argc)
+			{
+				inputFile = argv[i+1];
+			}
+			if (std::string{"-o"} == argv[i] && i + 1 < argc)
+			{
+				outputFile = argv[i+1];
+			}
+		}
+		if(inputFile == "" || outputFile == "") {
+			std::cout << "please provide input and output file using -i *inputfile* -o *outputfile*" << std::endl;
+		}
+	}
+
 	std::vector<std::string> tileNames_;
 	std::vector<sf::Image> images_;
-	loadTiles("tiles.txt", images_, tileNames_);
+	loadTiles(inputFile, images_, tileNames_);
 	std::vector<Tiles> tiles_{images_.size()};
 	for (int i = 0; i < tiles_.size(); ++i)
 		tiles_[i].tileIndex = i;
@@ -145,6 +171,6 @@ int main(int argc, char const *argv[])
 		}
 	}
 
-	printConnectionsToFile("circuit.txt", imageSize.x, tiles_, tileNames_);
+	printConnectionsToFile(outputFile, imageSize.x, tiles_, tileNames_);
 	return 0;
 }

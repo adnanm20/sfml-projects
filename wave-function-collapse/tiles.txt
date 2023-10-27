@@ -1,3 +1,3 @@
 ./circuit/
 png
-chip_center chip_conn_d chip_conn_l chip_conn_r chip_conn_u chip_corner_dl chip_corner_dr chip_corner_ul chip_corner_ur wire_dl wire_dlr wire_dr wire_end_d wire_end_l wire_end_r wire_end_u wire_lr wire_udl wire_udlr wire_ud wire_udr wire_ul wire_ulr wire_ur
+chip_center chip_conn_d chip_conn_l chip_conn_r chip_conn_u chip_corner_dl chip_corner_dr chip_corner_ul chip_corner_ur wire_dl wire_dr wire_end_d wire_end_l wire_end_r wire_end_u wire_lr wire_ud wire_ul wire_ur
