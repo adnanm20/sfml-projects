@@ -16,4 +16,4 @@ sudo apt-get install libsfml-dev
 Every directory is a different project and should contain its own Makefile which you run using make command
 
 ## Wave Function Collapse
-An example of how we can use wave function collapse to generate different images based on tiles given a set of rules. Hit space to see the generation run to the end or use n to view each tile being placed. You can reset the image using R.
+An example of how we can use wave function collapse to generate different images based on tiles given a set of rules. Hit space to see the generation run to the end or use n to view each tile being placed. You can reset the image using R. Using the connectionMaker you can generate rules for any set of tiles. It checks all edges of every tile and compares to every other tile's edges.
