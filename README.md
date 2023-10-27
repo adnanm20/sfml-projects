@@ -23,6 +23,7 @@ Start the program using
 ./waveFunctionCollapse.out -i tileConnections.txt
 ```
 Hit space to see the generation run to the end or use n to view each tile being placed. You can reset the image using R. 
+
 Using the connectionMaker you can generate rules for any set of tiles. It checks all edges of every tile and compares to every other tile's edges.
 ```bash
 ./connectionMaker.out -i tiles.txt -o circuit2.txt
