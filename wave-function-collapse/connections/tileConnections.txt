@@ -1,0 +1,79 @@
+50
+./images/
+png
+uldr u d l r ud lr udl udr ulr dlr ul ur dl dr
+# uldr
+uldr d ud dl dr dlr udl udr
+/ uldr u ud ul ur ulr udl udr
+/ uldr r lr ur dr ulr dlr udr
+/ uldr l lr ul dl ulr dlr udl
+# u
+uldr d ud dl dr dlr udl udr
+/ r l lr dr dl dlr
+/ u d ud l ul dl udl
+/ u d ud r ur dr udr
+# d
+r l lr ur ul ulr
+/ uldr u ud ul ur udl udr ulr
+/ u d ud l ul dl udl
+/ u d ud r ur dr udr
+# l
+u l r lr ul ur ulr
+/ d l r lr dl dr dlr
+/ uldr r lr ur dr ulr dlr
+/ u d r ud ur dr udr
+# r
+u l r lr ul ur ulr
+/ d l r lr dl dr dlr
+/ u d l ud ul dl udl
+/ uldr l lr ul dl udl ulr dlr
+# ud
+uldr d ud dr dl udl udr dlr
+/ uldr u ud ur ul udl udr ulr
+/ u d ud l ul dl udl
+/ u d ud r ur dr udr
+# lr
+u l r lr ul ur ulr
+/ d l r lr dl dr dlr
+/ uldr r lr ur dr ulr dlr
+/ uldr l lr ul dl udl ulr dlr
+# udl
+uldr d ud dr dl udl udr dlr
+/ uldr u ud ur ul udl udr ulr
+/ uldr r lr ur dr ulr dlr
+/ u d ud r ur dr udr
+# udr
+uldr d ud dr dl udl udr dlr
+/ uldr u ud ur ul udl udr ulr
+/ u d ud l ul dl udl
+/ uldr l lr ul dl udl ulr dlr
+# ulr
+uldr d ud dr dl udl udr dlr
+/ d l r lr dl dr dlr
+/ uldr r lr ur dr ulr dlr
+/ uldr l lr ul dl udl ulr dlr
+# dlr
+u l r lr ul ur ulr
+/ uldr u ud ur ul udl udr ulr
+/ uldr r lr ur dr ulr dlr
+/ uldr l lr ul dl udl ulr dlr
+# ul
+uldr d ud dr dl udl udr dlr
+/ r l lr dr dl dlr
+/ uldr r lr ur dr ulr dlr
+/ u d ud r ur dr udr
+# ur
+uldr d ud dr dl udl udr dlr
+/ r l lr dr dl dlr
+/ u d l ud ul dl udl
+/ uldr l lr ul dl udl ulr dlr
+# dl
+r l lr ur ul ulr
+/ uldr u ud ul ur udl udr ulr
+/ uldr r lr ur dr ulr dlr
+/ u d ud r ur dr udr
+# dr
+r l lr ur ul ulr
+/ uldr u ud ul ur udl udr ulr
+/ u d l ud ul dl udl
+/ uldr l lr ul dl udl ulr dlr
