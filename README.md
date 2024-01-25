@@ -28,3 +28,13 @@ Using the connectionMaker you can generate rules for any set of tiles. It checks
 ```bash
 ./connectionMaker.out -i tiles.txt -o circuit2.txt
 ```
+
+## Falling Sand
+My take on the falling sand simulation using [Celullar Automata](https://en.wikipedia.org/wiki/Cellular_automaton).
+Idea from [Coding challenge](https://www.youtube.com/watch?v=L4u7Zy_b868).
+
+Start using
+```bash
+./sand-ca.out
+```
+Mouse click will add a blob of sand.
